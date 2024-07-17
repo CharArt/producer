@@ -7,11 +7,16 @@ import reactor.core.publisher.Mono;
 import reactor.kafka.sender.KafkaSender;
 import reactor.kafka.sender.SenderRecord;
 
+import static com.kafka.producer.model.Data.MeasurementType.TEMPERATURE;
+import static com.kafka.producer.model.Data.MeasurementType.VOLTAGE;
+import static org.springframework.expression.Operation.POWER;
+
 @Service
 @RequiredArgsConstructor
 public class KafkaDataServiceImpl implements KafkaDataService {
 
     private final KafkaSender<String, Object> sender;
+
 
     @Override
     public void send(Data data) {

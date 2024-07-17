@@ -24,6 +24,7 @@ public class DataController {
     private final TestDataService testDataService;
     private final DataTestOptionsMapper dataTestOptionsMapper;
 
+
     @PostMapping("/send")
     public void send(@RequestBody DataDto dto) {
         Data data = dataMapper.toEntity(dto);

@@ -11,4 +11,4 @@ public class ProducerApplication {
 	}
 }
 
-//bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic data-temperature --from-beginning
+//bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic data-voltage --from-beginning

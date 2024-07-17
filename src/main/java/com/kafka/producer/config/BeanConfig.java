@@ -6,6 +6,7 @@ import lombok.SneakyThrows;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.io.IOException;
 import java.util.Objects;
 
 @Configuration
@@ -13,7 +14,9 @@ public class BeanConfig {
 
     @SneakyThrows
     @Bean
-    public XML producerXML() {
-        return new XMLDocument( Objects.requireNonNull(getClass().getResourceAsStream("/kafka/producer.xml")).readAllBytes());
+    public XML producerXml() {
+        return new XMLDocument(
+                getClass().getResourceAsStream("/kafka/producer.xml").readAllBytes()
+        );
     }
 }
